@@ -1,0 +1,23 @@
+﻿<Window x:Class="CanvasTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CanvasTest"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding LeftCommand}" Key="Left"/>
+        <KeyBinding Command="{Binding RightCommand}" Key="Right"/>
+        <KeyBinding Command="{Binding UpCommand}" Key="Up"/>
+        <KeyBinding Command="{Binding DownCommand}" Key="Down"/>
+    </Window.InputBindings>
+    <Canvas>
+        <Ellipse Fill="Gainsboro" Canvas.Left="25" Canvas.Top="25" Width="{Binding Width}" Height="{Binding Height}" />
+    </Canvas>
+</Window>
